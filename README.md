@@ -57,5 +57,12 @@ nano default-ssl.conf
 Change the doc from /var/www/html to /var/www/htmls
 cd /var/www
 cp -R html/ htmls
-```
-
+nano /etc/apache2/sites-available/default-ssl.conf
+e modificar os ssl primeiro é (yourcert.crt and second yourkey.key
+cd /etc/ssl/certs
+cp /etc/easy-rsa/pki/private/*.crt .
+cd ../private/
+cp /etc/easy-rsa/pki/private/*.key .
+chown --reference=ssl-cert-snakeoil.key *pt.key
+chmod --reference=ssl-cert-snakeoil.key *pt.key
+systemctl restart apache2
