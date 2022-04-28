@@ -1,4 +1,4 @@
-# Apache config for EC2 / Redhat
+# Apache config for Redhat and Debian
 
 **Install Apache** ➡️ *yum install httpd*
 
@@ -31,10 +31,11 @@
 *#SSLCipherSuite HIGH:MEDIUM:!aNULL:!MD5:!SEED:!IDEA*
 
 **Edit your cert and key** ⬇️
-
+```
 *SSLCertificateFile /etc/ssl/certs/crt.crt*
  
 *SSLCertificateKeyFile /etc/ssl/private/key.key*
+ ```
  
 **systemctl restart httpd**
 
