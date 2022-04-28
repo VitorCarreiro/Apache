@@ -40,3 +40,21 @@
 **systemctl restart httpd**
 
 
+**For Debian**
+
+apt install apache2
+
+To activate HTTPS
+```
+a2enmod ssl
+a2ensite default-ssl.conf
+systemctl restart apache2
+```
+Change some settings
+´´´
+cd /etc/apache2/sites-available/
+nano default-ssl.conf
+Change the doc from /var/www/html to /var/www/htmls
+cd /var/www
+cp -R html/ htmls
+´´´
