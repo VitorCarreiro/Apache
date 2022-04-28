@@ -50,11 +50,12 @@ a2enmod ssl
 a2ensite default-ssl.conf
 systemctl restart apache2
 ```
-Change some settings
-´´´
+**Change some settings and create a second dir**
+```
 cd /etc/apache2/sites-available/
 nano default-ssl.conf
 Change the doc from /var/www/html to /var/www/htmls
 cd /var/www
 cp -R html/ htmls
-´´´
+```
+
